@@ -5,17 +5,12 @@ return {
     opts = function(_, opts)
       -- customize the dashboard header
       opts.section.header.val = {
-        " █████  ███████ ████████ ██████   ██████",
-        "██   ██ ██         ██    ██   ██ ██    ██",
-        "███████ ███████    ██    ██████  ██    ██",
-        "██   ██      ██    ██    ██   ██ ██    ██",
-        "██   ██ ███████    ██    ██   ██  ██████",
-        " ",
-        "    ███    ██ ██    ██ ██ ███    ███",
-        "    ████   ██ ██    ██ ██ ████  ████",
-        "    ██ ██  ██ ██    ██ ██ ██ ████ ██",
-        "    ██  ██ ██  ██  ██  ██ ██  ██  ██",
-        "    ██   ████   ████   ██ ██      ██",
+        "⠀⠀⣶⣶⣶⣶⠀⠀⠀⣶⣶⡶⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+        "⠀⢰⣿⣿⣿⣿⡆⠀⢠⣿⣿⡇⢠⣤⣤⡄⠀⠀⣤⣤⣤⠀⢠⣤⣤⠄⠀⢠⣤⣤⣠⣤⣤⣄⠀⣠⣤⣤⣄⠀",
+        "⠀⣼⣿⡿⢹⣿⣷⠀⣸⣿⣿⠀⠀⣿⣿⡇⠀⣼⣿⣿⠃⠀⣿⣿⣿⠀⠀⣿⣿⣿⠟⢿⣿⣿⣿⠟⣿⣿⣿⡄",
+        "⢠⣿⣿⡇⠈⣿⣿⡇⣿⣿⡏⠀⠀⣿⣿⡇⣼⣿⣿⠃⠀⢰⣿⣿⡇⠀⢰⣿⣿⡏⠀⢸⣿⣿⠃⠀⣿⣿⣿⠀",
+        "⣸⣿⣿⠀⠀⢹⣿⣿⣿⣿⠃⠀⠀⢸⣿⣿⣿⡿⠁⠀⠀⣼⣿⣿⠀⠀⣼⣿⣿⠃⠀⣿⣿⡿⠀⢰⣿⣿⡏⠀",
+        "⠿⠿⠏⠀⠀⠀⠿⠿⠿⠟⠀⠀⠀⠸⠿⠿⠿⠁⠀⠀⠀⠿⠿⠏⠀⠠⠿⠿⠿⠀⠰⠿⠿⠇⠀⠼⠿⠿⠃⠀",
       }
       return opts
     end,
@@ -63,15 +58,21 @@ return {
   --   end,
   -- },
   -- By adding to the which-key config and using our helper function you can add more which-key registered bindings
-  -- {
-  --   "folke/which-key.nvim",
-  --   config = function(plugin, opts)
-  --     require "plugins.configs.which-key"(plugin, opts) -- include the default astronvim config that calls the setup call
-  --     -- Add bindings which show up as group name
-  --     local wk = require "which-key"
-  --     wk.register({
-  --       b = { name = "Buffer" },
-  --     }, { mode = "n", prefix = "<leader>" })
-  --   end,
-  -- },
+  {
+    "folke/which-key.nvim",
+    config = function(plugin, opts)
+      require "plugins.configs.which-key"(plugin, opts) -- include the default astronvim config that calls the setup call
+      -- Add bindings which show up as group name
+      local wk = require "which-key"
+      wk.register({
+        u = { name = "UI" },
+        p = { name = "Packages" },
+        S = { name = "Sessions" },
+        b = { name = "Buffers" },
+        f = { name = "Find" },
+        d = { name = "Debugger" },
+        t = { name = "Test" },
+      }, { mode = "n", prefix = "<leader>" })
+    end,
+  },
 }
