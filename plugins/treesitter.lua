@@ -5,11 +5,12 @@ return {
       "nvim-treesitter/nvim-treesitter-textobjects",
     },
     opts = {
-    ensure_installed = {
+      ensure_installed = {
         "go",
         "lua",
         "json",
         "yaml",
+        "http",
       },
       textobjects = {
         enable = true,
