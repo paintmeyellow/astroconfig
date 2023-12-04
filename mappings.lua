@@ -12,6 +12,7 @@ return {
     ["<leader>tc"] = { ":GoCoverage<cr>", desc = "Go Coverage"},
     L = { function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end, desc = "Next buffer" },
     H = { function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end, desc = "Previous buffer" },
+    ["<leader>fg"] = { ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>", desc = "Live grep args"},
   },
   t = {
     -- setting a mapping to false will disable it
