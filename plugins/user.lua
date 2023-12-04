@@ -11,6 +11,8 @@ return {
   },
   {
     "ray-x/go.nvim",
+    -- there is bug with goimport at master c61f9371cdaaec40cccf0783ff968bee83df5bda
+    commit = "44bd0589ad22e2bb91f2ed75624c4a3bab0e5f59",
     ft = "go",
     dependencies = {
       "ray-x/guihua.lua",
