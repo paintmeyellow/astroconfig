@@ -20,5 +20,21 @@ au("BufWritePre", {
   desc = "Run gofmt + goimport on save",
 })
 
+au("FileType", {
+  pattern = {
+    "sql",
+    "mysql",
+    "plsql"
+  },
+  callback = function()
+    require('cmp').setup.buffer({
+      sources = {
+        { name = 'vim-dadbod-completion' },
+      },
+    })
+  end,
+  desc = "Dadbod nvim-cmp completion",
+})
+
 create_command("A", ":GoAlt", { desc = "GoAlt" })
 create_command("AV", ":GoAltV", { desc = "GoAltV" })

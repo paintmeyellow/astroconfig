@@ -103,8 +103,8 @@ return {
         S = { name = "Sessions" },
         b = { name = "Buffers" },
         f = { name = "Find" },
-        d = { name = "Debugger" },
-        t = { name = "Test" },
+        d = { name = "Database" },
+        t = { name = "Testing" },
       }, { mode = "n", prefix = "<leader>" })
     end,
   },

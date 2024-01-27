@@ -13,9 +13,28 @@ return {
     L = { function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end, desc = "Next buffer" },
     H = { function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end, desc = "Previous buffer" },
     ["<leader>fg"] = { ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>", desc = "Live grep args"},
-  },
-  t = {
     -- setting a mapping to false will disable it
     -- ["<esc>"] = false,
+    ["<leader>db"] = false,
+    ["<leader>dB"] = false,
+    ["<leader>dc"] = false,
+    ["<leader>dC"] = false,
+    ["<leader>dE"] = false,
+    ["<leader>dh"] = false,
+    ["<leader>di"] = false,
+    ["<leader>do"] = false,
+    ["<leader>dO"] = false,
+    ["<leader>dp"] = false,
+    ["<leader>dQ"] = false,
+    ["<leader>dq"] = false,
+    ["<leader>dR"] = false,
+    ["<leader>dr"] = false,
+    ["<leader>ds"] = false,
+    ["<leader>du"] = { ":DBUIToggle<cr>", desc = "DBUI Toggle"},
+  },
+  t = {
+  },
+  v = {
+    ["e"] = { "<Plug>(DBUI_ExecuteQuery)<cr>", desc = "Execute Query"},
   },
 }
